@@ -21,8 +21,8 @@ function checkGuess(num) {
 }
 function askGuess() {
   rl.question('Enter a guess: ', answer => {
-    checkGuess(+answer);
-    rl.close();
+    if (checkGuess(+answer)) rl.close();
+    else askGuess();
   })
 }
 askGuess();
